@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.liuyitao.dao.PassDao">
+    <select id="findAll" resultType="com.liuyitao.entity.Pass">
+        select * from T_Passes
+    </select>
+
+    <select id="checkNameExists" parameterType="String" resultType="int">
+        select count(*) from T_Passes WHERE name=#{name}
+    </select>
+
+    <select id="find" parameterType="long" resultType="int">
+        SELECT * FROM T_Passes where id=#{id}
+    </select>
+
+    <insert id="add" parameterType="com.liuyitao.entity.Pass" useGeneratedKeys="true" keyColumn="id">
+        INSERT INTO T_Passes (weburl,name,username,password,remark,createdate)
+        VALUES
+        (
+        #{weburl},#{name},#{username},#{password},#{remark},#{createdate,jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <delete id="delete" parameterType="long" >
+        DELETE FROM T_Passes where id=#{id}
+    </delete>
+
+    <update id="update" parameterType="com.liuyitao.entity.Pass">
+        UPDATE T_Passes SET
+        weburl=#{weburl},name=#{name},username=#{username},
+        password=#{password},remark=#{remark},createdate=#{createdate,jdbcType=TIMESTAMP},
+        lastupdatedate=#{lastupdatedate,jdbcType=TIMESTAMP}
+        WHERE id=#{id}
+    </update>
+</mapper>
