@@ -33,10 +33,9 @@ public class PassController {
         return new JsonResult().setCode(SuccessCode.SUCCESS_CODE.getCode()+"").setData(passService.findAll());
     }
 
-
-    @RequestMapping(value="pass",method = RequestMethod.GET)
+    @RequestMapping(value="pass/{id}",method = RequestMethod.GET)
     public @ResponseBody
-    JsonResult pass(long id)
+    JsonResult pass(@PathVariable long id)
     {
         return new JsonResult().setCode(SuccessCode.SUCCESS_CODE.getCode()+"").setData(passService.find(id));
     }
@@ -49,9 +48,16 @@ public class PassController {
     }
 
     @RequestMapping(value="pass",method = RequestMethod.POST)
-    public @ResponseBody JsonResult update(Pass pass)
+    public @ResponseBody JsonResult update(@RequestBody Pass pass)
     {
         passService.update(pass);
+        return new JsonResult().setCode(SuccessCode.SUCCESS_CODE.getCode()+"").setMsg("update successful");
+    }
+
+    @RequestMapping(value="pass/{id}",method = RequestMethod.DELETE)
+    public @ResponseBody JsonResult delete(@PathVariable long id)
+    {
+        passService.delete(id);
         return new JsonResult().setCode(SuccessCode.SUCCESS_CODE.getCode()+"").setMsg("delete successful");
 
     }

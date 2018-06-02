@@ -10,7 +10,7 @@
         select count(*) from T_Passes WHERE name=#{name}
     </select>
 
-    <select id="find" parameterType="long" resultType="int">
+    <select id="find" parameterType="long" resultType="com.liuyitao.entity.Pass">
         SELECT * FROM T_Passes where id=#{id}
     </select>
 

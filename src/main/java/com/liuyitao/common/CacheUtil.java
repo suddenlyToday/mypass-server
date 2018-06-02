@@ -88,8 +88,9 @@ public class CacheUtil {
         UserRequestRecord start=list.getFirst();
         UserRequestRecord end=list.getLast();
 
-        if(start!=null&&end!=null&&(end.getDate()-start.getDate())<=Max_Request_Count_Minutes_Limit*60*1000)
+        if(start!=null&&end!=null&&(end.getDate()-start.getDate())<=Max_Request_Count_Minutes_Limit*60*1000) {
             throw new SystemException("too many requests,take a time for a while...", PermissionErrorCode.TooManyRequestInTimePeriod);
+        }
     }
 
 }

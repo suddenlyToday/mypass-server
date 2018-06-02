@@ -104,7 +104,8 @@ public class MyWebConfigAdapter extends WebMvcConfigurerAdapter {
                             throw new SystemException(String.format("%s,login first please",username),PermissionErrorCode.NotLoginError);
                         }else if(!session.getUserUuid().equals( CacheUtil.getUserSessionUuid(getIpAddress(request),username)))
                         {
-                            deleteSession(username);//网络环境改变的话，让用户重新登陆
+                            //网络环境改变的话，让用户重新登陆
+                            deleteSession(username);
                             throw new SystemException(String.format( "dear %s,your network enviroment has changed,please login again",username),PermissionErrorCode.EnvirementChanged);
                         }
                     }

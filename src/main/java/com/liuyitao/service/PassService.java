@@ -30,11 +30,11 @@ public class PassService implements IPassService {
     @Override
     public void add(Pass pass) {
         if(pass==null||pass.getUsername()==null||pass.getPassword()==null||pass.getName()==null)
-            throw new SystemException("pass username or password can't be empty where add pass",ParameterErrorCode.PARAMETER_ERROR_CODE);
+            throw new SystemException("pass name&username&password can't be empty where add pass",ParameterErrorCode.PARAMETER_ERROR_CODE);
 
         if(checkNameExits(pass.getName()))
         {
-            throw new SystemException(String.format( "pass with name(%s) is already exists.",pass.getUsername()),ParameterErrorCode.REPEAT_PASS_NAME);
+            throw new SystemException(String.format( "pass with name(%s) is already exists.",pass.getName()),ParameterErrorCode.REPEAT_PASS_NAME);
         }
 
         pass.setPassword(PassEDUtil.encodePass(pass.getPassword()));
@@ -55,7 +55,7 @@ public class PassService implements IPassService {
     @Override
     public void update(Pass pass) {
         if(pass==null||pass.getUsername()==null||pass.getPassword()==null||pass.getName()==null)
-            throw new SystemException("pass username or password can't be empty where update pass",ParameterErrorCode.PARAMETER_ERROR_CODE);
+            throw new SystemException("pass&username&password&name can't be empty where update pass",ParameterErrorCode.PARAMETER_ERROR_CODE);
 
         pass.setPassword(PassEDUtil.encodePass(pass.getPassword()));
         pass.setLastupdatedate(new Date());
