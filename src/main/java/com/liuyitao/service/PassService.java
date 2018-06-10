@@ -39,6 +39,7 @@ public class PassService implements IPassService {
 
         pass.setPassword(PassEDUtil.encodePass(pass.getPassword()));
         pass.setCreatedate(new Date());
+        pass.setLastupdatedate(pass.getCreatedate());
         passDao.add(pass);
     }
 
