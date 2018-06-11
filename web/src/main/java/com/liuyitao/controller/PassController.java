@@ -1,14 +1,11 @@
 package com.liuyitao.controller;
 
 import com.liuyitao.bean.JsonResult;
+import com.liuyitao.service.PassService;
 import com.liuyitao.bean.enums.errorCode.SuccessCode;
 import com.liuyitao.entity.Pass;
-import com.liuyitao.service.PassService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /***
  *@Author: liuyitao

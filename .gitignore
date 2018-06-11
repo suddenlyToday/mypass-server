@@ -2,4 +2,4 @@ target/
 *.iml
 .idea/
 *.bak
-application.properties
+**/application.properties

@@ -6,7 +6,16 @@
 
     <groupId>com.liuyitao</groupId>
     <artifactId>mypass</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>dal</module>
+        <module>web</module>
+        <module>model</module>
+        <module>IService</module>
+        <module>service</module>
+        <module>common</module>
+    </modules>
 
     <properties>
         <java.version>1.8</java.version>

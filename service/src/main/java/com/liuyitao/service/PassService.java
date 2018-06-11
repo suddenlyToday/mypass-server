@@ -1,12 +1,12 @@
 package com.liuyitao.service;
 
 
+import com.liuyitao.service.IService.IPassService;
 import com.liuyitao.bean.SystemException;
 import com.liuyitao.bean.enums.errorCode.ParameterErrorCode;
 import com.liuyitao.common.PassEDUtil;
 import com.liuyitao.dao.PassDao;
 import com.liuyitao.entity.Pass;
-import com.liuyitao.service.IService.IPassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

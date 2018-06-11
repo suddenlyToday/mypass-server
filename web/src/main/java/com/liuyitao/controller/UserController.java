@@ -1,10 +1,9 @@
 package com.liuyitao.controller;
 
+import com.liuyitao.bean.enums.errorCode.PermissionErrorCode;
 import com.liuyitao.bean.JsonResult;
 import com.liuyitao.bean.UserSessionBean;
-import com.liuyitao.bean.enums.errorCode.PermissionErrorCode;
 import com.liuyitao.bean.enums.errorCode.SuccessCode;
-import com.liuyitao.common.CommonUtil;
 import com.liuyitao.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

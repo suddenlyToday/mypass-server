@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.google.common.cache.LoadingCache;
 import com.liuyitao.bean.JsonResult;
 import com.liuyitao.bean.SystemException;
 import com.liuyitao.bean.UserSessionBean;
